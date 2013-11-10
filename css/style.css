@@ -4,3 +4,6 @@
 .bars > li{
 	list-style: none;
 }
+#header > a{
+	text-decoration: none;
+}

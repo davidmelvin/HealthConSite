@@ -45,7 +45,7 @@
 
 	<div class="container">
 		<div class="sixteen columns">
-			<h1 class="remove-bottom" style="margin-top: 40px" id="header">HealthCon</h1>
+			<h1 class="remove-bottom" style="margin-top: 40px" id="header"><a href="index.html">HealthCon</a></h1>
 			<hr />
 		</div>
 		<div class="one-third column">
@@ -58,50 +58,22 @@
 			</ul>
 		</div>
 		<div class="two-thirds column">
-			
-			<ul class="bars">
-				<li>
-					<figure id="1">
-						<progress class="nutrientBar" max="100"value=""></progress>
-						<span></span>
-						<figcaption>Calories</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure id="2">
-						<progress class="nutrientBar"  value="" max="100"></progress>
-						<span></span>
-						<figcaption>Protein</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure id="3">
-						<progress class="nutrientBar" value="" max="100"></progress>
-						<span></span>
-						<figcaption>Fat</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure id="4">
-						<progress class="nutrientBar" value="" max="100"></progress>
-						<span></span>
-						<figcaption>Fiber</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure id="5">
-						<progress class="nutrientBar" value="" max="100"></progress>
-						<span></span>
-						<figcaption>Vitamins</figcaption>
-					</figure>
-				</li>
-				<li>
-					<figure id="6">
-						<progress class="nutrientBar" value="" max="100"></progress>
-						<span></span>
-						<figcaption>Minerals</figcaption>
-					</figure>
-				</li>
+			<form>
+				<label>What did you eat?</label>
+				<select id="foodItem" autofocus>
+					<option value="1">McDonalds Caesar Salad with Crispy Chicken</option>
+					<option value="2">Banana</option>
+					<option value="3">Cheesecake</option>
+					<option value="4">1% LowFat Milk</option>
+					<option value="5">Frosted Flakes</option>
+					<option value="5">Spinach</option>
+				</select>
+				<label>How many servings did you eat?</label>
+				<input type="text" name="numServings">
+				<input type="submit" name="submit">
+			</form>
+			<ul id="itemInfo">
+				
 			</ul>
 		</div>
 
@@ -113,5 +85,5 @@
 </body>
 <script src="js/jquery-1.10.2.min.js"></script>
 
-<script src="js/progress.js"></script>
+<script src="js/food.js"></script>
 </html>
