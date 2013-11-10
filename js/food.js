@@ -1,4 +1,5 @@
  $(document).ready(function(){
+ var choice = 0;
  var arr = [["Calories","cal",2000,,349,105,257,102,111,42],
 			["Protein","g",50,,25.71,1.29,4.4,8.22,1.19,5.16],
 			["Fat","g",65,,16.41,0.39,18,2.37,0.5,0.72],
@@ -16,8 +17,20 @@
 			["Vitamin E (alpha-tocopherol)","mg",20,,0,0.12,438,0.02,0.02,3.66],
 			["Vitamin D" ,"IU",400,,0,0,14,117,53,0],
 			["Vitamin K (phylloquinone)" ,"µg",80,,0,0.6,3.5,0.2,0.1,869.4]];
-			
-	for ( x = 0; x <19; x++){
-		$("#itemInfo").append("<li>" + arr[x][0] + ": " + arr[x][4] + " " + arr[x][1] + " (" + Math.round(arr[x][4]/arr[x][2]*10000)/100 + "%)</li>");
-	}
+			$("#foodItem").change(function(){
+				choice = $("#foodItem :selected").val() -1 ;
+				console.log(choice);
+				var stuff = "";
+				for ( x = 0; x <17; x++){
+					//console.log(choice);
+					//var f = $("#foodItem :selected").val();
+						//$("#itemInfo").append("<li>" + arr[x][0] + ": " + arr[x][4] + " " + arr[x][1] + " (" + Math.round(arr[x][4]/arr[x][2]*10000)/100 + "%)</li>");
+						//$("#itemInfo").append("<li>" + arr[x][0] + ": " + arr[x][choice+4] + " " + arr[x][choice+1] + " (" + Math.round(arr[x][choice+4]/arr[x][choice+2]*10000)/100 + "%)</li>");
+						stuff += "<li>" + arr[x][0] + ": " + arr[x][choice+4] + " " + arr[x][1] + " (" + Math.round(arr[x][choice+4]/arr[x][2]*10000)/100 + "%)</li>";
+					}
+					console.log(stuff);
+					$("#itemInfo").html(stuff);
+			});
+	//var f = ;
+	
  });
