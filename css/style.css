@@ -1,0 +1,6 @@
+.nutrientBar{
+	width: 80%;
+}
+.bars > li{
+	list-style: none;
+}
