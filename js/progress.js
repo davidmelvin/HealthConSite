@@ -5,10 +5,8 @@
 	$("#" + nutrient + "> progress").prop("value", val);
 	$("#" + nutrient + "> span").html(val + "%");
   }
-  updateProgress(1, 87);
-  updateProgress(2, 10);
-  updateProgress(3, 30);
-  updateProgress(4, 47);
-  updateProgress(5, 68);
-   updateProgress(6, 86);
+ 
+   for (x = 1; x<18; x++){
+		updateProgress(x, window.nutrients[x-1]);
+   }
  });

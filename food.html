@@ -4,7 +4,12 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-
+	<script type='text/javascript' > 
+	  //window.glob = "global variable"; 
+	  // window.nutrients = new Array();
+	  //window.nutrients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	  nutrients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	</script>
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
@@ -50,15 +55,16 @@
 		</div>
 		<div class="one-third column">
 			<ul>
-				<li><a href="food.html"> Input Food</a></li>
+				<li><a href="food.html"> Input a Food Item</a></li>
+				<li><a href="today.html">View Today's Nutrient Values</a></li>
 				<li><a href="rec.html">View Recommendations</a></li>
 				<li><a href="exercise.html">Input Exercise</a></li>
 				<li><a href="archive.html">View Archives</a></li>
 				<li><a href="articles.html">View Nutrition Articles</a></li>
 			</ul>
 		</div>
-		<div class="two-thirds column">
-			<form>
+		<div id="first" class="two-thirds column">
+			<form action="" onsubmit="return false">
 				<label>What did you eat?</label>
 				<select id="foodItem" autofocus>
 					<option value="1">McDonalds Caesar Salad with Crispy Chicken</option>
@@ -70,10 +76,133 @@
 				</select>
 				<label>How many servings did you eat?</label>
 				<input type="text" value="1" maxlength="3" id="numServings">
-				<input type="submit" name="submit">
+				<p id="choose"> Choose Food</p>
+				<input type="submit" id="save" value="Save This Food">
 			</form>
 			<ul id="itemInfo">
 				
+			</ul>
+		</div>
+		<div id="second" class="two-thirds column">
+			<h2>Today's Nutrient Values</h2>
+			<ul class="bars">
+				<figure id="1">
+						<progress class="nutrientBar" max="100"value=""></progress>
+						<span></span>
+						<figcaption>Calories</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="2">
+						<progress class="nutrientBar"  value="" max="100"></progress>
+						<span></span>
+						<figcaption>Protein</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="3">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Fat</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="4">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Fiber</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="5">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Calcium</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="6">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Iron</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="7">
+						<progress class="nutrientBar" max="100"value=""></progress>
+						<span></span>
+						<figcaption>Magnesium</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="8">
+						<progress class="nutrientBar"  value="" max="100"></progress>
+						<span></span>
+						<figcaption>Protein</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="9">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Fat</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="10">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Fiber</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="11">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Vitamins</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="12">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Minerals</figcaption>
+					</figure>
+				</li>
+					<figure id="13">
+						<progress class="nutrientBar" max="100"value=""></progress>
+						<span></span>
+						<figcaption>Calories</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="14">
+						<progress class="nutrientBar"  value="" max="100"></progress>
+						<span></span>
+						<figcaption>Protein</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="15">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Fat</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="16">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Fiber</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure id="17">
+						<progress class="nutrientBar" value="" max="100"></progress>
+						<span></span>
+						<figcaption>Vitamins</figcaption>
+					</figure>
+				</li>
 			</ul>
 		</div>
 
@@ -86,4 +215,9 @@
 <script src="js/jquery-1.10.2.min.js"></script>
 
 <script src="js/food.js"></script>
+<script src="js/progress.js"></script>
+
+<script>
+	//alert(window.nutrients[0]);
+	</script>
 </html>

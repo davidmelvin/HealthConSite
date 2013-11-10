@@ -32,29 +32,49 @@
 			["Vitamin E (alpha-tocopherol)","mg",20,,0,0.12,438,0.02,0.02,3.66],
 			["Vitamin D" ,"IU",400,,0,0,14,117,53,0],
 			["Vitamin K (phylloquinone)" ,"µg",80,,0,0.6,3.5,0.2,0.1,869.4]];
+			//nutrients = [54954,8,2,0,234,0,0,99,0,0,0,0,0,0,0,0,0];
+			
  $(document).ready(function(){
  var choice = 0;
-
+			var updateProgress = function(nutrient, val){
+	
+	$("#" + nutrient + "> progress").prop("value", val);
+	$("#" + nutrient + "> span").html(val + "%");
+  }
+ 
+   for (x = 1; x<18; x++){
+		updateProgress(x, window.nutrients[x-1]);
+   }
 			var display = function(){
 				choice = $("#foodItem :selected").val() -1 ;
-				console.log(choice);
+				//console.log(choice);
 				var stuff = "";
 				for ( x = 0; x <17; x++){
+					window.nutrients[x] = Math.round(arr1[x][choice+4]/arr1[x][2]*10000)/100;
 					stuff += "<li>" + arr1[x][0] + ": " + arr1[x][choice+4] + " " + arr1[x][1] + " (" + Math.round(arr1[x][choice+4]/arr1[x][2]*10000)/100 + "%)</li>";
 					}
 					console.log(stuff);
 					$("#itemInfo").html(stuff);
 			}
-			$("#foodItem").change(function(){
-				display();
-			});
-			$("#numServings").on('change', function(){
-				
+
+			$("#choose").click(function(){
 				for(y=0; y<17; y++){
-					for (x = 4; x <10; x++){
-						arr1[y][x] = arr[y][x]*$("#numServings").val();
-					}
+				for (x = 4; x <10; x++){
+					arr1[y][x] = arr[y][x]*$("#numServings").val();
 				}
-				display();
+			}
+			display();
 			});
+			$("#save").click(function(){
+				//console.log(supportsLocalStorage());
+				for( x = 0; x < 17; x++){
+					//nutrients[x] = arr1[0][choice+4];
+					
+					updateProgress(x+1, nutrients[x]);
+					//console.log(nutrients[0]);
+				}
+				$("#first").hide();
+				$("#second").show();
+			});
+			
  });
