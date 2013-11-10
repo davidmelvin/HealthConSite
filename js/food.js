@@ -50,7 +50,7 @@
 				//console.log(choice);
 				var stuff = "";
 				for ( x = 0; x <17; x++){
-					window.nutrients[x] = Math.round(arr1[x][choice+4]/arr1[x][2]*10000)/100;
+					window.nutrients[x] += Math.round(arr1[x][choice+4]/arr1[x][2]*10000)/100;
 					stuff += "<li>" + arr1[x][0] + ": " + arr1[x][choice+4] + " " + arr1[x][1] + " (" + Math.round(arr1[x][choice+4]/arr1[x][2]*10000)/100 + "%)</li>";
 					}
 					console.log(stuff);
@@ -66,7 +66,12 @@
 			display();
 			});
 			$("#save").click(function(){
-				//console.log(supportsLocalStorage());
+				for(y=0; y<17; y++){
+				for (x = 4; x <10; x++){
+					arr1[y][x] = arr[y][x]*$("#numServings").val();
+				}
+			}
+			display();
 				for( x = 0; x < 17; x++){
 					//nutrients[x] = arr1[0][choice+4];
 					
@@ -75,6 +80,7 @@
 				}
 				$("#first").hide();
 				$("#second").show();
+				
 			});
 			
  });
