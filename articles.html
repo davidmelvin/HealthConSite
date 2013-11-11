@@ -4,7 +4,12 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-
+	<script type='text/javascript' > 
+	  //window.glob = "global variable"; 
+	  // window.nutrients = new Array();
+	  //window.nutrients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	  nutrients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	</script>
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
@@ -48,16 +53,39 @@
 			<h1 class="remove-bottom" style="margin-top: 40px" id="header"><a href="index.html">HealthCon</a></h1>
 			<hr />
 		</div>
-		<div class="sixteen columns">
+		<div class="one-third column">
 			<ul>
-				<li><a href="food.html"> Input a Food Item</a></li>
-				<li><a href="today.html">View Today's Nutrient Values</a></li>
-				<li><a href="rec.html">View Recommendations</a></li>
+				<li><a id="input" href=""> Input a Food Item</a></li>
+				<li><a class="nutrients" href="">View Today's Nutrient Values</a></li>
+				<li><a id="rec" href="">View Recommendations</a></li>
 				<li><a href="articles.html">View Nutrition Articles</a></li>
 			</ul>
 		</div>
+		<div id="panels" class="two-thirds column">
+			<h3>Weight Loss Articles</h3>
+			<ul>
+				<li><a href="lose-exersize.html">Exercise Tips</a></li>
+				<li><a href="lose-food.html">Diet Tips</a></li>
+			</ul>
+			<h3>Nutrient Articles</h3>
+			<ul>
+				<li><a href="Vitamin A.html">Vitamin A</a></li>
+				<li><a href="Vitamin D.html">Vitamin D</a></li>
+				<li><a href="lose-food.html">Vitman B-6</a></li>
+			</ul>
+			<h3>Muscle Gain</h3>
+			<ul>
+				<li><a href="lose-exersize.html">Exercise Tips</a></li>
+				<li><a href="lose-food.html">Diet Tips</a></li>
+			</ul>
+			<h3>Healthy Balance</h3>
+			<ul>
+				<li><a href="lose-exersize.html">Exercise Tips</a></li>
+				<li><a href="lose-food.html">Diet Tips</a></li>
+			</ul>
+				
+		</div>
 		
-
 	</div><!-- container -->
 
 
@@ -66,5 +94,8 @@
 </body>
 <script src="js/jquery-1.10.2.min.js"></script>
 
+<script src="js/food.js"></script>
 <script src="js/progress.js"></script>
+
+
 </html>
